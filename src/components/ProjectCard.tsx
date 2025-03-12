@@ -18,7 +18,7 @@ interface Project {
           <h3 className="text-xl font-semibold mb-2">{title}</h3>
           <p className="text-gray-700 mb-4">{description}</p>
           <p className="text-sm text-gray-500 mb-4">Tech: {tech.join(", ")}</p>
-          {link && <a href={link} className="text-blue-600 hover:underline">View Project</a>}
+          {link && <a href={link} target="_blank" className="text-blue-600 hover:underline">View Project</a>}
         </div>
       </motion.div>
     );

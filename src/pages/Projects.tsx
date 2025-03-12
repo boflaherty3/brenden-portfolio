@@ -6,7 +6,7 @@ const Projects = () => {
       title: "Infinite Limit Business Services Website",
       description: "Designed and deployed a 6-page website with Astro, TypeScript, and TailwindCSS. Integrated a CI/CD pipeline with GitHub Pages and built a dynamic contact form with Node.js.",
       tech: ["Astro", "TypeScript", "TailwindCSS", "Node.js", "GitHub Pages"],
-      link: "https://github.com/yourusername/infinite-limit", // Replace with real link
+      link: "https://github.com/Infinite-Limit/marketing-site", // Replace with real link
     },
     {
       title: "Brand and Buzz Consulting Redesign",

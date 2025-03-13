@@ -6,15 +6,20 @@ const Projects = () => {
       title: "Infinite Limit Business Services Website",
       description: "Designed and deployed a 6-page website with Astro, TypeScript, and TailwindCSS. Integrated a CI/CD pipeline with GitHub Pages and built a dynamic contact form with Node.js.",
       tech: ["Astro", "TypeScript", "TailwindCSS", "Node.js", "GitHub Pages"],
-      link: "https://github.com/Infinite-Limit/marketing-site", // Replace with real link
-      link2: "https://infinite-limit.github.io/marketing-site/", // Replace with real link
+      link: "https://github.com/Infinite-Limit/marketing-site",
+      link2: "https://infinite-limit.github.io/marketing-site/",
     },
     {
       title: "Brand and Buzz Consulting Redesign",
       description: "Redesigned WordPress pages, boosting traffic by 25% with SEO optimization and reducing update time by 50% via backend improvements.",
       tech: ["WordPress", "SEO", "Google Analytics"],
     },
-    // Add more projects as needed
+    {
+      title: "Brenden's Portfolio Website",
+      description: "Created this portfolio site using Vite with Typescript, React, and TailwindCSS. Integrated a CI/CD pipeline with GitHub Pages and deployed to custom domain at brendenoflaherty.dev. Utilized Node.js for local development and deployment.",
+      tech: ["TypeScript", "TailwindCSS", "Node.js", "GitHub Pages"],
+      link: "https://brendenoflaherty.dev", // Replace with real link
+    },
   ];
 
   return (

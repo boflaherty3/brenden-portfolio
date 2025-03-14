@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import running from "../assets/running.jpeg";
+import brenden from "../assets/brenden_headshot.jpeg";
+import castle from "../assets/castle.jpeg";
+
 
 const About = () => {
   return (
@@ -21,10 +25,18 @@ const About = () => {
         </p>
         <Link to='/contact' className="inline-block bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-600 transition-colors">
           Get in Touch with me</Link>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto pt-8">
+          <div className="overflow-hidden rounded-lg shadow-md hover:shadow-blue-500/50 transition-shadow">
+            <img src={running} alt="Brenden running" className="w-full h-88 object-cover object-top" />
+          </div>
+          <div className="overflow-hidden rounded-lg shadow-md hover:shadow-blue-500/50 transition-shadow">
+            <img src={brenden} alt="Brenden Headshot" className="w-full h-88 object-cover" />
+          </div>
+          <div className="overflow-hidden rounded-lg shadow-md hover:shadow-blue-500/50 transition-shadow">
+            <img src={castle} alt="Brenden at O'Flaherty Castle" className="w-full h-88 object-cover" />
+          </div>
+        </div>
       </div>
-      {/*<div>
-        <img src="../assets/react.svg" alt="running" className="w-1/2 mx-auto my-8 rounded-lg" />
-      </div>*/}
     </section>
   );
 }

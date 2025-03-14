@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import running from "../assets/running.jpeg";
-import brenden from "../assets/brenden_headshot.jpeg";
+import brenden from "../assets/brenden.jpeg";
 import castle from "../assets/castle.jpeg";
 
 

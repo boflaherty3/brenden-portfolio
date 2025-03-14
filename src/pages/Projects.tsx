@@ -13,12 +13,24 @@ const Projects = () => {
       title: "Brand and Buzz Consulting Redesign",
       description: "Redesigned WordPress pages, boosting traffic by 25% with SEO optimization and reducing update time by 50% via backend improvements.",
       tech: ["WordPress", "SEO", "Google Analytics"],
+      link2: "https://brandandbuzzconsulting.com",
     },
     {
       title: "Brenden's Portfolio Website",
       description: "Created this portfolio site using Vite with Typescript, React, and TailwindCSS. Integrated a CI/CD pipeline with GitHub Pages and deployed to custom domain at brendenoflaherty.dev. Utilized Node.js for local development and deployment.",
       tech: ["TypeScript", "TailwindCSS", "Node.js", "GitHub Pages"],
-      link: "https://brendenoflaherty.dev", // Replace with real link
+      link: "https://brendenoflaherty.dev",
+    },
+    {
+      title: "Tic Tac Toe Game",
+      description: "Developed a Tic Tac Toe game using Python. Implemented a minimax algorithm to simulate 'AI' moves. Created players with different strategies and difficulty levels.",
+      tech: ["Python", "Git"],
+      link: "https://github.com/boflaherty3/tictactoe",
+    },
+    {
+      title: "Electrocardiogram (ECG) Project",
+      description: "Designed and built a functional ECG using operational amplifiers, capacitors, and resistors, applying MATLAB and DSP to filter noise and output accurate readings.",
+      tech: ["MATLAB", "DSP", "Electical Circuits"],
     },
   ];
 

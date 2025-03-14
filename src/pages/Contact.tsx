@@ -1,3 +1,6 @@
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload } from "react-icons/fa";
+
+
 const Contact = () => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-gray-900 text-white py-12">
@@ -8,25 +11,42 @@ const Contact = () => {
             </p>
             <div className="space-y-4">
                 <p>
-                    <a href="mailto:brendenoflaherty@gmail.com" 
-                    className="text-blue-500 hover:text-blue-600 transition-colors">
-                    brendenoflaherty@gmail.com</a>
+                    <span className="flex items-center justify-center">
+                        <a href="mailto:brendenoflaherty@gmail.com" 
+                        className="flex items-center justify-center space-x-2 text-blue-500 hover:text-blue-600 transition-colors">
+                        <FaEnvelope className="w-5 h-5" />
+                        <span>brendenoflaherty@gmail.com</span>
+                        </a>
+                    </span>
                 </p>
                 <p>
-                    <a href="https://www.github.com/boflaherty3" 
-                    className="text-blue-500 hover:text-blue-600 transition-colors"
-                    target="_blank">
-                    Github Profile</a>
+                    <span className="flex items-center justify-center">
+                        <a href="https://www.github.com/boflaherty3" 
+                        className="flex items-center justify-center space-x-2 text-blue-500 hover:text-blue-600 transition-colors"
+                        target="_blank">
+                        <FaGithub className="w-5 h-5" />
+                        <span>GitHub Profile</span>
+                        </a>
+                    </span>
                 </p>
                 <p>
-                    <a href="https://www.linkedin.com/in/brendenoflaherty" 
-                    className="text-blue-500 hover:text-blue-600 transition-colors"
-                    target="_blank">
-                    LinkedIn Profile</a>
+                    <span className="flex items-center justify-center">
+                        <a href="https://www.linkedin.com/in/brendenoflaherty" 
+                        className="flex items-center justify-center space-x-2 text-blue-500 hover:text-blue-600 transition-colors"
+                        target="_blank">
+                        <FaLinkedin className="w-5 h-5" />
+                        <span>LinkedIn Profile</span>
+                        </a>
+                    </span>
                 </p>
                 <p>
-                    <a href="/BrendenO'FlahertyResume.pdf" download className="inline-block bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-600 transition-colors">
-                    Download Resume</a>
+                    <span className="flex items-center justify-center">
+                        <a href="/BrendenO'FlahertyResume.pdf" download 
+                        className="flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-600 transition-colors inline-block">
+                            <FaFileDownload className="w-5 h-5" />
+                        <span>Download Resume</span>
+                        </a>
+                    </span>
                 </p>
             </div>
         </div>

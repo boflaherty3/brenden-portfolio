@@ -7,6 +7,7 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Footer from "./components/Footer";
 import Experience from "./pages/Experience";
+import ChatbotComponent from './components/Chatbot';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/experience" element={<Experience />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
+          <ChatbotComponent />
         </main>
         <Footer />
       </div>

@@ -1,0 +1,50 @@
+/* Chat container */
+.react-chatbot-kit-chat-container {
+  background-color: #1f2937; /* Tailwind's gray-900 */
+  color: #ffffff; /* White text */
+  border-radius: 0.5rem; /* Match the rounded-lg from Tailwind */
+  overflow: hidden;;
+}
+
+/* Message container (parent of user and bot messages) */
+.react-chatbot-kit-chat-message-container {
+    max-width: 100%; /* Ensure the message container doesn't exceed the chat container */
+    overflow-x: hidden; /* Hide horizontal overflow */
+  }
+  
+/* Bot messages */
+.react-chatbot-kit-chat-bot-message {
+  background-color: #3b82f6; /* Tailwind's blue-500 */
+  color: #ffffff;
+  max-width: 80%; /* Prevent the bubble from stretching too wide */
+  overflow-wrap: break-word;
+  padding: 0.5rem 1rem;
+  line-height: 1.5;
+}
+
+/* User messages */
+.react-chatbot-kit-chat-message-container .react-chatbot-kit-chat-user-message {
+  background-color: #4b5563; /* Tailwind's gray-600 */
+  color: #ffffff;
+  max-width: 80%; /* Prevent the bubble from stretching too wide */
+  overflow-wrap: break-word !important;
+  padding: 0.5rem 1rem;
+  line-height: 1.5;
+}
+
+/* Input field */
+.react-chatbot-kit-chat-input {
+  background-color: #d4d4d7; /* Tailwind's gray-700 */
+  color: #4b5563;
+  border: none;
+}
+
+/* Send button */
+.react-chatbot-kit-chat-btn-send {
+  background-color: #3b82f6; /* Tailwind's blue-500 */
+}
+
+/* Send button icon */
+.react-chatbot-kit-chat-btn-send-icon {
+  fill: #ffffff;
+}

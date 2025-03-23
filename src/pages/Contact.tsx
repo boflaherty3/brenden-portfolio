@@ -3,11 +3,11 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload } from "react-icons/fa
 
 const Contact = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gray-900 text-white py-12">
+    <section className="flex items-center justify-center bg-gray-900 text-white py-8 md:py-12">
         <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-8">Contact Me</h2>
-            <p className="text-lg text-gray-300 mb-6">I'm always open to new opportunities 
-                and collaborations. Reach out to me via email or connect with me on LinkedIn!
+            <p className="text-lg text-gray-300 mb-6">
+                I’m actively seeking full-stack and front-end opportunities to contribute to innovative projects and grow as a developer. Let’s connect—I’d love to discuss how I can bring value to your team!
             </p>
             <div className="space-y-4">
                 <p>

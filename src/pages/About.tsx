@@ -10,18 +10,25 @@ const About = () => {
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-center mb-8">About Me</h2>
         <p className="text-lg text-gray-300 mb-6">
-          I'm a software engineer with a degree in biomedical engineering from Tufts University, 
-          now focused on full-stack web development. I have experience with JavaScript, TypeScript, Python, 
-          React, and Node.js among other capabilities. I'm always looking to learn new technologies and improve 
-          <Link to="/skills" className="text-blue-500 hover:text-blue-600 transition-colors"> my skills</Link>. 
+        Hello! I’m Brenden O’Flaherty, a passionate Software Engineer and Full-Stack Developer with a unique background
+         in biomedical engineering from Tufts University. I specialize in building responsive, user-focused web 
+         applications using modern technologies like JavaScript, TypeScript, React, Node.js, and Python. 
+         My <Link to="/experience" className="text-blue-500 underline hover:text-blue-600 transition-colors">experience</Link> spans front-end development—crafting clean, intuitive interfaces with React and 
+         Tailwind CSS—to back-end development, creating efficient APIs with Node.js. 
           I'm passionate about creating clean, efficient, and user-friendly applications. 
           I'm currently seeking new opportunities to grow as a developer and contribute to exciting projects.
+        </p>
+        <p className="text-lg text-gray-300 mb-6">
+        What sets me apart is my problem-solving mindset, honed through my engineering background, and my commitment to writing clean, maintainable code. I’ve built projects like this portfolio website, complete with an interactive chatbot to assist visitors, showcasing my ability to integrate user-friendly features into full-stack applications. I’m always eager to learn new technologies and tackle challenging problems, whether it’s optimizing performance or designing seamless user experiences.
+        </p>
+        <p className="text-lg text-gray-300 mb-6">
+        I'm currently seeking full-stack and front-end opportunities where I can contribute to impactful projects, collaborate with talented teams, and continue growing as a developer. Let’s connect—I’d love to bring my skills to your next project!
         </p>
         <p className="text-lg text-gray-300 mb-6">
           I'm currently based in Boston, MA but I'm looking to move back to NYC.
         </p>
         <p className="text-lg text-gray-300 mb-6">
-          When I'm not coding, I enjoy running, playing basketball, and traveling.
+          When I'm not coding, I enjoy running, golfing, and traveling.
         </p>
         <Link to='/contact' className="inline-block bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-600 transition-colors">
           Get in Touch with me</Link>

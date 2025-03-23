@@ -19,7 +19,8 @@ const Projects = () => {
       title: "Brenden's Portfolio Website",
       description: "Created this portfolio site using Vite with Typescript, React, and TailwindCSS. Integrated a CI/CD pipeline with GitHub Pages and deployed to custom domain at brendenoflaherty.dev. Utilized Node.js for local development and deployment.",
       tech: ["TypeScript", "TailwindCSS", "Node.js", "GitHub Pages"],
-      link: "https://brendenoflaherty.dev",
+      link: "https://github.com/boflaherty3/brenden-portfolio",
+      link2: "https://brendenoflaherty.dev",
     },
     {
       title: "Tic Tac Toe Game",

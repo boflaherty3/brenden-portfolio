@@ -1,3 +1,11 @@
+# brendenoflaherty.dev
+
+Welcome to my personal portfolio repo. This contains the files for my portfoloi at the domain brendenoflaherty.dev.
+
+The site is deployed with Github Pages at my custom domain. Please visit and let me know what you think!
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

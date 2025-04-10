@@ -1,13 +1,21 @@
 import OpenAI from 'openai';
 
-const openai = new OpenAI({
-    apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-    dangerouslyAllowBrowser: true
-});
+// Create a secure instance of OpenAI
+const createOpenAI = () => {
+    const apiKey = process.env.VITE_OPENAI_API_KEY;
+    if (!apiKey) return null;
+    
+    return new OpenAI({
+        apiKey,
+        dangerouslyAllowBrowser: true
+    });
+};
+
+const openai = createOpenAI();
 
 export const getChatbotResponse = async (message: string): Promise<string> => {
-    if (!import.meta.env.VITE_OPENAI_API_KEY) {
-        throw new Error('OpenAI API key is not configured');
+    if (!openai) {
+        throw new Error('OpenAI API is not configured');
     }
 
     try {
@@ -51,6 +59,6 @@ export const getChatbotResponse = async (message: string): Promise<string> => {
         return completion.choices[0].message.content;
     } catch (error) {
         console.error('Error calling OpenAI API:', error);
-        throw error; // Re-throw the error to trigger the fallback system
+        throw error;
     }
 }; 

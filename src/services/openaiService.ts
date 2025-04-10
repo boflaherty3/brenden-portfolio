@@ -2,7 +2,7 @@ import OpenAI from 'openai';
 
 // Create a secure instance of OpenAI
 const createOpenAI = () => {
-    const apiKey = process.env.VITE_OPENAI_API_KEY;
+    const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
     if (!apiKey) return null;
     
     return new OpenAI({

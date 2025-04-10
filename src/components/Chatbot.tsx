@@ -2,6 +2,7 @@ import Chatbot from 'react-chatbot-kit';
 import 'react-chatbot-kit/build/main.css';
 import React, { useState } from 'react';
 import '../chatbot.css';
+import { getChatbotResponse } from '../services/openaiService';
 
 interface Message {
     id: number;
@@ -18,7 +19,7 @@ interface Config {
     };
     chatContainerStyle?: { width: string; height: string };
 }
-  
+
 interface Action {
     handleSkills: () => void;
     handleProjects: () => void;
@@ -27,19 +28,20 @@ interface Action {
     handleAbout: () => void;
     handleExperience: () => void;
     handleResume: () => void;
+    handleResponse: (message: string) => void;
 }
 
 const config: Config = {
-initialMessages: [{id: 1, message: "Hi! how can I help you?", type: "bot"}],
+    initialMessages: [{id: 1, message: "Hi! I'm Brenden Bot. How can I help you today?", type: "bot"}],
     botName: "Brenden Bot",
     customStyles: {
         botMessageBox: { backgroundColor: "#3b82f6" },
         chatButton: { backgroundColor: "#3b82f6" },
-      },
-      chatContainerStyle: {
+    },
+    chatContainerStyle: {
         width: "300px",
         height: "400px",
-      },
+    },
 };
 
 interface MessageParserProps {
@@ -52,27 +54,33 @@ interface ChildProps {
 }
 
 const MessageParser: React.FC<MessageParserProps> = ({children, actions}) => {
-    const parse = (message: string) => {
-        if (message.toLowerCase().includes("skills")) {
-            actions.handleSkills();
-        }
-        else if (message.toLowerCase().includes("projects")) {
-            actions.handleProjects();
-        }
-        else if (message.toLowerCase().includes("contact")) {
-            actions.handleContact();
-        }
-        else if (message.toLowerCase().includes("about")) {
-            actions.handleAbout();
-        }
-        else if (message.toLowerCase().includes("experience")) {
-            actions.handleExperience();
-        }
-        else if (message.toLowerCase().includes("resume")) {
-            actions.handleResume();
-        }
-        else {
-            actions.handleDefault();
+    const parse = async (message: string) => {
+        try {
+            const response = await getChatbotResponse(message);
+            actions.handleResponse(response);
+        } catch (error) {
+            // Fallback to hardcoded responses if OpenAI fails
+            if (message.toLowerCase().includes("skills")) {
+                actions.handleSkills();
+            }
+            else if (message.toLowerCase().includes("projects")) {
+                actions.handleProjects();
+            }
+            else if (message.toLowerCase().includes("contact")) {
+                actions.handleContact();
+            }
+            else if (message.toLowerCase().includes("about")) {
+                actions.handleAbout();
+            }
+            else if (message.toLowerCase().includes("experience")) {
+                actions.handleExperience();
+            }
+            else if (message.toLowerCase().includes("resume")) {
+                actions.handleResume();
+            }
+            else {
+                actions.handleDefault();
+            }
         }
     }
 
@@ -80,7 +88,7 @@ const MessageParser: React.FC<MessageParserProps> = ({children, actions}) => {
         <div>
             {React.Children.map(children, (child) => {
                 return React.cloneElement(child as React.ReactElement<ChildProps>, { parse });
-                })}
+            })}
         </div>
     );
 };
@@ -95,7 +103,15 @@ interface ActionChildProps {
     actions: Action;
 }
 
-const ActionProvider:React.FC<ActionProviderProps> = ( {createChatBotMessage, setState, children }) => {
+const ActionProvider: React.FC<ActionProviderProps> = ({createChatBotMessage, setState, children}) => {
+    const handleResponse = (message: string) => {
+        const botMessage = createChatBotMessage(message);
+        setState((prev: any) => ({
+            ...prev,
+            messages: [...prev.messages, botMessage],
+        }));
+    };
+
     const handleSkills = () => {
         const botMessage = createChatBotMessage("I specialize in JavaScript, TypeScript, React, Node.js, and Python!");
         setState((prev: any) => ({
@@ -137,7 +153,7 @@ const ActionProvider:React.FC<ActionProviderProps> = ( {createChatBotMessage, se
     };
 
     const handleDefault = () => {
-        const botMessage = createChatBotMessage("I’m not sure about that, but feel free to ask about my skills, projects, or how to contact me!");
+        const botMessage = createChatBotMessage("I'm not sure about that, but feel free to ask about my skills, projects, or how to contact me!");
         setState((prev: any) => ({
             ...prev,
             messages: [...prev.messages, botMessage],
@@ -156,8 +172,17 @@ const ActionProvider:React.FC<ActionProviderProps> = ( {createChatBotMessage, se
         <div>
             {React.Children.map(children, (child) => {
                 return React.cloneElement(child as React.ReactElement<ActionChildProps>, { 
-                    actions: { handleSkills, handleProjects, handleContact, handleAbout, handleExperience, handleDefault, handleResume },
-            });
+                    actions: { 
+                        handleSkills, 
+                        handleProjects, 
+                        handleContact, 
+                        handleAbout, 
+                        handleExperience, 
+                        handleDefault, 
+                        handleResume,
+                        handleResponse 
+                    },
+                });
             })}
         </div>
     );
